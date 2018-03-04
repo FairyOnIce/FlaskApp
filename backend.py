@@ -1,5 +1,5 @@
 from  numpy.random import randint
-from tensorflow.keras import layers
+import tensorflow as tf
 
 placeholder = "__"
 
