@@ -3,4 +3,4 @@ Jinja2==2.7.3
 gunicorn==19.1.1
 numpy
 keras
-tensorflow=1.1.0
+tensorflow==1.1.0
