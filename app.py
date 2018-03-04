@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
-from backend import predict, placeholder
+from backend import preprocess, placeholder
 # Reference:
 # https://pythonspot.com/flask-web-app-with-python/
 # https://www.tutorialspoint.com/index.html
@@ -24,7 +24,7 @@ def index():
 def login():
    if request.method == 'POST':
       textFromWeb = request.form['nm']
-      out = predict(textFromWeb)
+      out = pr.predict(textFromWeb)
       return redirect(url_for('show_result',result = out))
 
 @app.route('/out/<string:result>')
@@ -36,4 +36,7 @@ def show_result(result):
 
 
 if __name__ == "__main__":
+    print("start")
+    pr = preprocess("sentiment")
+    print("preparation")
     app.run(host='0.0.0.0')
