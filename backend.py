@@ -1,5 +1,5 @@
 import numpy.random.randint as randint
-from keras.models import load_model
+import tensorflow
 
 placeholder = "__"
 
