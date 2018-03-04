@@ -3,6 +3,9 @@ from flask import Flask, render_template, redirect, url_for, request
 # https://pythonspot.com/flask-web-app-with-python/
 # https://www.tutorialspoint.com/index.html
 
+## Heroku reference
+# https://github.com/datademofun/heroku-basic-flask
+
 app = Flask(__name__)
 
 

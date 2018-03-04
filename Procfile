@@ -1,3 +1,1 @@
-web: gunicorn app:app
-init: python main.py
-upgrade: python main.py
+web: gunicorn app:app --log-file=-
