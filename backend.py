@@ -13,4 +13,4 @@ def predict(text):
     out = ""
     for w in ltext:
         out += w.lower() + " "
-    return (out + placeholder + str(np.random.randint(0,100,1)))
+    return (out + placeholder + str(np.random.randint(0,100,1)[0]))
