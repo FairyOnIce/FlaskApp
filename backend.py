@@ -1,5 +1,6 @@
 from  numpy.random import randint
 from tensorflow.contrib import keras
+import pickle
 
 placeholder = "__"
 
