@@ -1,5 +1,6 @@
 import numpy as np
 import keras
+
 placeholder = "__"
 
 def predict(text):
