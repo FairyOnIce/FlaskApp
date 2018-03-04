@@ -2,4 +2,3 @@ Flask==0.10.1
 Jinja2==2.7.3
 gunicorn==19.1.1
 keras==2.0.8
-tensorflow==1.1.0
