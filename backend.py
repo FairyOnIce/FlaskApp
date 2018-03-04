@@ -1,5 +1,5 @@
 from  numpy.random import randint
-import tensorflow as tf
+from tensorflow.contrib import keras
 
 placeholder = "__"
 
