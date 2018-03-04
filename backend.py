@@ -1,5 +1,6 @@
-placeholder = "__"
+import keras
 
+placeholder = "__"
 
 def predict(text):
     '''
