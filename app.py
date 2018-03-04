@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
+from backend import predict
 # Reference:
 # https://pythonspot.com/flask-web-app-with-python/
 # https://www.tutorialspoint.com/index.html
@@ -6,6 +7,7 @@ from flask import Flask, render_template, redirect, url_for, request
 ## Heroku reference
 # https://github.com/datademofun/heroku-basic-flask
 
+# https://simple-text-prediction.herokuapp.com/
 app = Flask(__name__)
 
 
@@ -16,9 +18,7 @@ def index():
         "index_page.html",**locals()
     )
 
-placeholder = "__"
-def predict(text):
-    return(text + "__" + text)
+
 
 @app.route('/index_page',methods = ['POST', 'GET'])
 def login():
