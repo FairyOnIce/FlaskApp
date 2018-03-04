@@ -1,4 +1,4 @@
-import numpy.random.randint as randint
+from  numpy.random import randint
 import tensorflow
 
 placeholder = "__"
