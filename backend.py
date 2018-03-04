@@ -1,5 +1,5 @@
 from  numpy.random import randint
-import tensorflow
+from tensorflow.keras import layers
 
 placeholder = "__"
 
@@ -10,7 +10,6 @@ def predict(text):
     :return:
 
     '''
-
     ltext = text.split()
     out = ""
     for w in ltext:
