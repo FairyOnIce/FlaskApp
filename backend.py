@@ -1,5 +1,5 @@
 import numpy as np
-import keras
+from keras.models import load_model
 
 placeholder = "__"
 
