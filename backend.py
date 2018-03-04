@@ -1,4 +1,3 @@
-import tensorflow
 import keras
 
 placeholder = "__"
