@@ -7,6 +7,7 @@ def predict(text):
 
     :param text: text mix of lower and upper
     :return:
+
     '''
     ltext = text.split()
     out = ""
