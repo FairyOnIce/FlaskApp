@@ -9,6 +9,7 @@ def predict(text):
     :return:
 
     '''
+    keras.backend
     ltext = text.split()
     out = ""
     for w in ltext:
