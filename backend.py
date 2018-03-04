@@ -1,5 +1,5 @@
 import numpy as np
-import keras
+
 placeholder = "__"
 
 def predict(text):
@@ -9,7 +9,7 @@ def predict(text):
     :return:
 
     '''
-    keras.backend
+
     ltext = text.split()
     out = ""
     for w in ltext:
