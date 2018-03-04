@@ -3,3 +3,4 @@ Jinja2==2.7.3
 gunicorn==19.1.1
 numpy
 keras
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp34-cp34m-linux_x86_64.whl
