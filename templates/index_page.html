@@ -2,16 +2,18 @@
 {% block body %}
 
 <div class="block1">
-<h1> Simple Translator </h1>
+<h1> Simple Sentiment Analysis </h1>
 
 <form action ="/index_page" method = "post">
-    <p> Name </p>
+    How are you doing?
     <p><input type = "text" name = "nm" /></p>
     <p><input type = "submit" value = "submit"/></p>
 </form>
 {% if output is not none %}
+    <h2>According to...</h2>
     <p>Input: {{ input }}</p>
-    <p>Output: {{ output }}</p>
+    <h2>Your happiness level is</h2>
+    <h1>{{ output }}</h1>
 {% endif %}
 </div>
 

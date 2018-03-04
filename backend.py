@@ -1,4 +1,4 @@
-
+import numpy as np
 
 placeholder = "__"
 
@@ -13,4 +13,4 @@ def predict(text):
     out = ""
     for w in ltext:
         out += w.lower() + " "
-    return (text + placeholder + out)
+    return (out + placeholder + str(np.random.randint(0,100,1)))
