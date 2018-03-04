@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
-from backend import predict
+from backend import predict, placeholder
 # Reference:
 # https://pythonspot.com/flask-web-app-with-python/
 # https://www.tutorialspoint.com/index.html

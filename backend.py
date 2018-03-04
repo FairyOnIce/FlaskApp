@@ -1,5 +1,5 @@
-
 placeholder = "__"
+
 
 def predict(text):
     '''
@@ -11,4 +11,4 @@ def predict(text):
     out = ""
     for w in ltext:
         out += w.lower() + " "
-    return(text + "__" + out)
+    return (text + placeholder + out)
