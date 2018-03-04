@@ -1,4 +1,4 @@
-import numpy as np
+import numpy.random.randint as randint
 from keras.models import load_model
 
 placeholder = "__"
@@ -15,4 +15,4 @@ def predict(text):
     out = ""
     for w in ltext:
         out += w.lower() + " "
-    return (out + placeholder + str(np.random.randint(0,100,1)[0]))
+    return (out + placeholder + str(randint(0,100,1)[0]))
