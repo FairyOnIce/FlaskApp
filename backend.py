@@ -23,7 +23,7 @@ def define_model(input_length, dim_out=3):
     main_output = layers.Dense(dim_out, activation='softmax')(x)
     model = models.Model(inputs=[main_input],
                          outputs=[main_output])
-    return (model)
+    return(model)
 
 
 
