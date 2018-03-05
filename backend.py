@@ -13,9 +13,9 @@ max_length = 32
 
 
 def define_model(input_length, dim_out=3):
-    dim_dense_embedding = 32
-    hidden_unit_LSTM = 32
-    vocab_size = 1001
+    dim_dense_embedding = 50
+    hidden_unit_LSTM = 4
+    vocab_size = 5001
     main_input = layers.Input(shape=(input_length,), dtype='int32', name='main_input')
     embedding = layers.Embedding(vocab_size, dim_dense_embedding,
                                  input_length=input_length)(main_input)
