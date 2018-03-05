@@ -24,15 +24,12 @@ def index():
 @app.route('/index_page',methods = ['POST', 'GET'])
 def respondToPostRequest():
    if request.method == 'POST':
-      out = "default"
       try:
           textFromWeb = request.form['nm']
-          a = 2
           out = pr.predict(textFromWeb)
-          a = 3
           return redirect(url_for('show_result',result = out))
       except:
-          return("unexpected error! " + str(a) + str(textFromWeb)+out)
+          return("unexpected error! ")
    return("Post reques is expected!")
 
 @app.route('/out/<string:result>')

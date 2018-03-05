@@ -23,7 +23,6 @@ def define_model(input_length, dim_out=3):
     main_output = layers.Dense(dim_out, activation='softmax')(x)
     model = models.Model(inputs=[main_input],
                          outputs=[main_output])
-    print(model.summary())
     return (model)
 
 
@@ -33,8 +32,6 @@ class preprocess(object):
     def __init__(self,name):
         self.load_model(name)
         self.word_index = self.get_word_index_from_csv()
-        print("-"*100)
-        print("preporocessing is succesful")
 
     def load_model(self,name):
         model = define_model(32)
