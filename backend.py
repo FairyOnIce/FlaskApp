@@ -71,11 +71,8 @@ class preprocess(object):
 
     def predict(self,line):
         encoded = self.texts_to_sequences(line)
-        print("Here",encoded)
         sequences = self.pad_pre_sequences([encoded], maxlen=max_length)
-        print(sequences,len(sequences[0]),max_length)
         probs = self.model.predict(sequences)[0]
-        print(probs)
         return (line + placeholder + "{:3.2f}".format(probs[1]))
 
     #def predict(self,text):
