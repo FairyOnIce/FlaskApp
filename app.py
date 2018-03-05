@@ -10,7 +10,7 @@ from backend import placeholder
 
 # https://simple-text-prediction.herokuapp.com/
 app = Flask(__name__)
-
+pr = be.preprocess("sentiment")
 
 @app.route("/")
 def index():
@@ -19,7 +19,7 @@ def index():
         "index_page.html",**locals()
     )
 
-pr = be.preprocess("sentiment")
+
 
 @app.route('/index_page',methods = ['POST', 'GET'])
 def respondToPostRequest():
