@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request
-from backend import preprocess, placeholder
+import backend as be
+from backend import placeholder
 # Reference:
 # https://pythonspot.com/flask-web-app-with-python/
 # https://www.tutorialspoint.com/index.html
@@ -31,12 +32,10 @@ def login():
 def show_result(result):
     input, output = result.split(placeholder)
     return render_template(
-        "index_page.html",**locals()
-    )
+        "index_page.html",**locals())
 
 
 if __name__ == "__main__":
     print("start")
-    pr = preprocess("sentiment")
-    print("preparation")
+    pr = be.preprocess("sentiment")
     app.run(host='0.0.0.0')
