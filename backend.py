@@ -23,9 +23,6 @@ def define_model(input_length, dim_out=3):
     main_output = layers.Dense(dim_out, activation='softmax')(x)
     model = models.Model(inputs=[main_input],
                          outputs=[main_output])
-    # compile network
-    model.compile(loss='categorical_crossentropy',
-                  optimizer='adam', metrics=['accuracy'])
     print(model.summary())
     return (model)
 
@@ -35,7 +32,9 @@ def define_model(input_length, dim_out=3):
 class preprocess(object):
     def __init__(self,name):
         self.load_model(name)
-        self.word_index, _ = self.get_word_index_from_csv()
+        self.word_index = self.get_word_index_from_csv()
+        print("-"*100)
+        print("preporocessing is succesful")
 
     def load_model(self,name):
         model = define_model(32)
@@ -45,11 +44,9 @@ class preprocess(object):
     def get_word_index_from_csv(self):
         tokenizer = pd.read_csv("tokenizer.csv")["tokenizer"].values
         word_index = {}
-        index_word = {}
         for index, word in enumerate(tokenizer, 1):
             word_index[word] = index
-            index_word[index] = word
-        return (word_index, index_word)
+        return (word_index)
 
     def pad_pre_sequences(self,arr, maxlen):
         lines = []
@@ -75,10 +72,13 @@ class preprocess(object):
 
     ## load model and tokenizer
     def predict(self,line):
+        print("prediction starts!")
         encoded = self.texts_to_sequences(line)
+        print("text is encoded")
         sequences = self.pad_pre_sequences([encoded], maxlen=max_length)
+        print("padding with 0")
         probs = self.model.predict(sequences)[0]
-
+        print("probability is computed")
         return (line + placeholder + "{:3.2f}".format(probs[2]))
 
 

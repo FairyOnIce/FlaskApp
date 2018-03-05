@@ -36,6 +36,6 @@ def show_result(result):
 
 
 if __name__ == "__main__":
-    print("start")
+
     pr = be.preprocess("sentiment")
     app.run(host='0.0.0.0')
