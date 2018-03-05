@@ -10,7 +10,7 @@ from backend import placeholder
 
 # https://simple-text-prediction.herokuapp.com/
 app = Flask(__name__)
-
+pr = be.preprocess("sentiment")
 
 @app.route("/")
 def index():
@@ -22,11 +22,18 @@ def index():
 
 
 @app.route('/index_page',methods = ['POST', 'GET'])
-def login():
+def respondToPostRequest():
    if request.method == 'POST':
-      textFromWeb = request.form['nm']
-      out = pr.predict(textFromWeb)
-      return redirect(url_for('show_result',result = out))
+      out = "default"
+      try:
+          textFromWeb = request.form['nm']
+          a = 2
+          out = pr.predict(textFromWeb)
+          a = 3
+          return redirect(url_for('show_result',result = out))
+      except:
+          return("unexpected error! " + str(a) + str(textFromWeb)+out)
+   return("Post reques is expected!")
 
 @app.route('/out/<string:result>')
 def show_result(result):
@@ -37,5 +44,6 @@ def show_result(result):
 
 if __name__ == "__main__":
 
-    pr = be.preprocess("sentiment")
+
+    app.debug = True
     app.run(host='0.0.0.0')

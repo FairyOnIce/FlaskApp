@@ -70,23 +70,15 @@ class preprocess(object):
                 out.append(self.word_index[llower])
         return (out)
 
-    ## load model and tokenizer
     def predict(self,line):
-        print("prediction starts!")
         encoded = self.texts_to_sequences(line)
-        print("text is encoded")
         sequences = self.pad_pre_sequences([encoded], maxlen=max_length)
-        print("padding with 0")
         probs = self.model.predict(sequences)[0]
-        print("probability is computed")
         return (line + placeholder + "{:3.2f}".format(probs[2]))
 
-
-
-
-#def predict(text):
-#    ltext = text.split()
-#    out = ""
-#    for w in ltext:
-#        out += w.lower() + " "
-#    return (out + placeholder + str(randint(0,100,1)[0]))
+    #def predict(self,text):
+    #   ltext = text.split()
+    #    out = ""
+    #    for w in ltext:
+    #        out += w.lower() + " "
+    #    return (out + placeholder + str(randint(0,100,1)[0]))
