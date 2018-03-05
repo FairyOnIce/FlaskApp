@@ -36,7 +36,7 @@ class preprocess(object):
         self.word_index = self.get_word_index_from_csv()
 
     def load_model(self,name):
-        model = define_model(32)
+        model = define_model(max_length)
         model.load_weights(name + '_weights.h5')
         self.model = model
 
@@ -71,9 +71,12 @@ class preprocess(object):
 
     def predict(self,line):
         encoded = self.texts_to_sequences(line)
+        print("Here",encoded)
         sequences = self.pad_pre_sequences([encoded], maxlen=max_length)
+        print(sequences,len(sequences[0]),max_length)
         probs = self.model.predict(sequences)[0]
-        return (line + placeholder + "{:3.2f}".format(probs[2]))
+        print(probs)
+        return (line + placeholder + "{:3.2f}".format(probs[1]))
 
     #def predict(self,text):
     #   ltext = text.split()
