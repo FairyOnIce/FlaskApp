@@ -9,13 +9,15 @@ from tensorflow.contrib.keras import models
 
 
 placeholder = "__"
-max_length = 32
 
+## These number must be the same as when model is trained
+max_length = 33
+dim_dense_embedding = 50
+hidden_unit_LSTM = 4
+vocab_size = 5001
 
-def define_model(input_length, dim_out=3):
-    dim_dense_embedding = 50
-    hidden_unit_LSTM = 4
-    vocab_size = 5001
+def define_model(input_length, dim_out=2):
+
     main_input = layers.Input(shape=(input_length,), dtype='int32', name='main_input')
     embedding = layers.Embedding(vocab_size, dim_dense_embedding,
                                  input_length=input_length)(main_input)
