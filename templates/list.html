@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+         <thead>
+         {% for column in column_names %}
+            <td>{{column}}</td>
+         {% endfor %}
+         </thead>
+
+         {% for row in rows %}
+          <tr>
+            {% for column in row.keys() %}
+               <td>{{row[ column ]}}</td>
+            {% endfor %}
+          </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>
